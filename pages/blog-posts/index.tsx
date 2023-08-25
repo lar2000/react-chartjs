@@ -1,4 +1,4 @@
-import { Chart } from "src/components/chartjs/index";
+import { Chart } from "@components/participants/index";
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function BlogPostList() {

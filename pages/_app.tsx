@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
           i18nProvider={i18nProvider}
           resources={[
             {
-              name: "blog_posts",
+              name: "participants",
               list: "/blog-posts",
               create: "/blog-posts/create",
               edit: "/blog-posts/edit/:id",
@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               },
             },
             {
-              name: "categories",
+              name: "pp-session",
               list: "/categories",
               create: "/categories/create",
               edit: "/categories/edit/:id",

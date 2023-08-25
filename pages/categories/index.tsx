@@ -1,9 +1,9 @@
-import { HeadlessListInferencer } from "@refinedev/inferencer/headless";
+import { Line } from "@components/pp-session/index";
 import { GetServerSideProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function CategoryList() {
-  return <HeadlessListInferencer />;
+  return <Line />;
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
