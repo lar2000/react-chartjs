@@ -10,8 +10,8 @@ interface ChartProps {
 
 const ChartComponent: React.FC<ChartProps> = ({ data_Male, data_Female, labels, type }) => {
 
-  const chartRef = useRef<HTMLCanvasElement | null>(null);
-  const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
+const chartRef = useRef<HTMLCanvasElement | null>(null);
+const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
 
 //   const total0 = data_Male.reduce((sum, current) => sum + current);
 //   const total1 = data_Female.reduce((sum, current) => sum + current);
