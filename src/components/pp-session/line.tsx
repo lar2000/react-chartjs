@@ -13,9 +13,14 @@ const ChartComponent: React.FC<ChartProps> = ({ data_Male, data_Female, labels, 
 const chartRef = useRef<HTMLCanvasElement | null>(null);
 const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
 
-//   const total0 = data_Male.reduce((sum, current) => sum + current);
-//   const total1 = data_Female.reduce((sum, current) => sum + current);
-//   const total3 = total0 + total1;
+const footer = (tooltipItems: any[]) => {
+  let sum = 0;
+
+  tooltipItems.forEach(function(tooltipItem) {
+    sum += tooltipItem.parsed.y;
+  });
+  return 'ຜູ້ເຂົ້າຮ່ວມທັງໝົດ: ' + sum;
+};
 
   useEffect(() => {
     if (chartRef.current) {
@@ -33,6 +38,7 @@ const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
               {
                 label: "ຊາຍ",
                 data: data_Female,
+                fill: false,
                 backgroundColor: ["rgba(255, 50, 50, 0.8)"],
                 borderColor: ["rgba(255, 50, 50, 2)"],
                 borderWidth: 1,
@@ -40,6 +46,7 @@ const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
               {
                 label: "ຍິງ",
                 data: data_Male,
+                fill: false,
                 backgroundColor: ["rgba(54, 162, 235, 0.8)"],
                 borderColor: ["rgba(54, 162, 235, 2)"],
                 borderWidth: 1,
@@ -52,6 +59,11 @@ const chartInstanceRef = useRef<Chart<"bar" | "line" | "pie"> | null>(null);
             //     display: true,
             //     text: `ຜູ້ເຂົ້າຮ່ວມທັງໝົດ: ${total3} ຄົນ`,
             //   },
+            tooltip: {
+              callbacks: {
+                footer: footer,
+              }
+            },
               legend: {
                 display: true,
                 position: "top",

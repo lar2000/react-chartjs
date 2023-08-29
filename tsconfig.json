@@ -50,7 +50,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/linetooltip/tooltip.js"  ],
   "exclude": [
     "node_modules"
   ]
